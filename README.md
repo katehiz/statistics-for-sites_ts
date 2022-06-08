@@ -21,27 +21,13 @@ Google Api docs: https://developers.google.com/speed/docs/insights/rest/v5/pages
 
 # Руководство по настройке сервера
 
-Домен/Сервер
-```
-Cервер: `lighthousemonitor-na-n1`
-Домен: `stats3.fabricmedia.ru:8080`
-
-```
-Подключение
-```
-ssh root@stats3.fabricmedia.ru
-```
-проверка статуса node сервера
-```
-supervisorctl status
-```
 Сборка
 ```
-1. перед сборкой надо остановить: `supervisorctl stop index_js:nodejs-indexjs`
+1. перед сборкой надо остановить супервизор: `<supervisor-name> stop <process-name>`
 2. перейти в директорию проекта
 3. стянуть с гита изменения `git pull origin master`
 4. Запустить сборку `npm run build`. Cкопировать в папку `./dist` сохранённую копию `stats.json`
-5. Запустить node сервер: `supervisorctl start index_js:nodejs-indexjs`
+5. Запустить node сервер: `<supervisor-name> stop <process-name>`
 ```
 
 Логи:
